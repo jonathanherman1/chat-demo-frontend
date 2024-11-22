@@ -8,6 +8,6 @@ export type DateDisplayProps = StyleSlots & {
 
 export const DateDisplay = ({ className, classNames, date }: DateDisplayProps) => (
   date ? (
-    <p className={twMerge(className, classNames?.base)}>{dayjs(date).format('MMM D, YYYY h:mm A')}</p>
+    <span className={twMerge(className, classNames?.base)}>{dayjs(date).format('MMM D, YYYY h:mm A')}</span>
   ) : <></>
 )
