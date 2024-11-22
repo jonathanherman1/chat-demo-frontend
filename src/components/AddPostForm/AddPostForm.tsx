@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, Textarea } from '@nextui-org/react'
 import { Controller, type FieldErrors, useForm } from 'react-hook-form'
+import { createPost } from '../../api/postsApi'
 import { ErrorMessageWrapper } from '../ErrorMessageWrapper'
 import { postSchema, type Post } from '../../schemas'
 
@@ -15,8 +16,9 @@ export const AddPostForm = () => {
     resolver: zodResolver(postSchema),
   })
 
-  const onSubmit = (data: Post) => {
-    console.log(data)
+  const onSubmit = async (data: Post) => {
+    const res = await createPost(data)
+    console.log(res)
     reset(defaultPost)
   }
 

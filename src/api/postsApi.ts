@@ -12,7 +12,7 @@ export const getPosts = async () => {
       return { success: false, message: 'There was a problem fetching posts.' }
     }
 
-    return response.json()
+    return { success: true, data: response.json() }
   } catch (error) {
     console.error('Error fetching posts:', error)
     return { success: false, message: 'There was a problem fetching posts.' }
@@ -32,7 +32,7 @@ export const createPost = async (postData: object) => {
       return { success: false, message: 'There was a problem create your post.' }
     }
 
-    return response.json()
+    return { success: true, data: response.json() }
   } catch (error) {
     console.error('Error creating post:', error)
     return { success: false, message: 'There was a problem create your post.' }
