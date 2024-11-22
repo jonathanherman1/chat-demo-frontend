@@ -1,6 +1,20 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'
+import type { Post } from '../schemas'
 
-export const getPosts = async () => {
+type ApiResponseSuccess = {
+  success: true
+  data: Post[]
+}
+
+type ApiResponseError = {
+  success: false
+  message: string
+}
+
+
+export type ApiResponse = ApiResponseSuccess | ApiResponseError
+
+export const getPosts = async (): Promise<ApiResponse> => {
   try {
     // In the future, add /posts to the end of the URL but keeping it simple for the demo
     const response = await fetch(`${API_BASE_URL}`, {
@@ -12,14 +26,15 @@ export const getPosts = async () => {
       return { success: false, message: 'There was a problem fetching posts.' }
     }
 
-    return { success: true, data: response.json() }
+    const data = await response.json()
+    return { success: true, data }
   } catch (error) {
     console.error('Error fetching posts:', error)
     return { success: false, message: 'There was a problem fetching posts.' }
   }
 }
 
-export const createPost = async (postData: object) => {
+export const createPost = async (postData: Post): Promise<ApiResponse> => {
   try {
     // In the future, add /posts to the end of the URL but keeping it simple for the demo
     const response = await fetch(`${API_BASE_URL}`, {
@@ -32,7 +47,8 @@ export const createPost = async (postData: object) => {
       return { success: false, message: 'There was a problem create your post.' }
     }
 
-    return { success: true, data: response.json() }
+    const data = await response.json()
+    return { success: true, data }
   } catch (error) {
     console.error('Error creating post:', error)
     return { success: false, message: 'There was a problem create your post.' }
