@@ -1,8 +1,9 @@
 import './App.css'
+import { AddPostForm } from './components'
 
 function App() {
   return (
-    <p className='text-blue-500 text-3xl font-bold'>Tailwind is working!</p>
+    <AddPostForm />
   )
 }
 
