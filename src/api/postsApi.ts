@@ -43,13 +43,13 @@ export const createPost = async (postData: Post): Promise<ApiResponse> => {
     })
 
     if (!response.ok) {
-      return { success: false, message: 'There was a problem create your post.' }
+      return { success: false, message: 'There was a problem creating your post.' }
     }
 
     const data = await response.json()
     return { success: true, data }
   } catch (error) {
     console.error('Error creating post:', error)
-    return { success: false, message: 'There was a problem create your post.' }
+    return { success: false, message: 'There was a problem creating your post.' }
   }
 }
