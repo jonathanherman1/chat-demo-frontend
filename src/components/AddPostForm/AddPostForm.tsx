@@ -2,15 +2,20 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, Textarea } from '@nextui-org/react'
 import { useState } from 'react'
 import { Controller, type FieldErrors, useForm } from 'react-hook-form'
-import { createPost } from '../../api/postsApi'
+import { twMerge } from 'tailwind-merge'
+import { createPost } from '@/api/postsApi'
+import { postSchema, type Post } from '@/schemas'
+import type { StyleSlots } from '@/types'
 import { ErrorMessageWrapper } from '../ErrorMessageWrapper'
-import { postSchema, type Post } from '../../schemas'
+
+export type AddPostFormProps = StyleSlots
 
 const defaultPost: Post = {
   message: '',
   username: '',
 }
-export const AddPostForm = () => {
+
+export const AddPostForm = ({ className, classNames }: AddPostFormProps) => {
   const [serverError, setServerError] = useState<string | null>(null)
   const { control, handleSubmit, reset, formState } = useForm<Post>({
     defaultValues: defaultPost,
@@ -32,8 +37,12 @@ export const AddPostForm = () => {
   }
 
   return (
-    <form className='w-full min-w-72 md:w-[44rem]' onSubmit={handleSubmit(onSubmit, onError)}>
-      <h2 className="mb-4 text-left font-bold">Add Post</h2>
+    <form
+      className={twMerge(className, classNames?.base)}
+      onSubmit={handleSubmit(onSubmit, onError)}
+    >
+      <h2 className="mb-2 text-left font-bold sm:text-2xl sm:font-medium">Add Post</h2>
+      <p className='mb-4 text-left text-sm text-gray-500'>This is a public forum. Please be mindful of what you post.</p>
       <Controller
         name="username"
         control={control}
@@ -75,9 +84,7 @@ export const AddPostForm = () => {
         Add Post
       </Button>
 
-      {serverError && <p className='mt-6 rounded-lg bg-red-50 p-6 text-red-500'>
-        {serverError}
-      </p>}
+      {serverError && <p className="mt-6 rounded-lg bg-red-50 p-6 text-red-500">{serverError}</p>}
     </form>
   )
 }
