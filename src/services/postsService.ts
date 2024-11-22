@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000'
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'
 
 export const getPosts = async () => {
   try {
@@ -9,7 +9,7 @@ export const getPosts = async () => {
     })
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch posts`)
+      return { success: false, message: 'There was a problem fetching posts.' }
     }
 
     return response.json()
@@ -29,7 +29,7 @@ export const createPost = async (postData: object) => {
     })
 
     if (!response.ok) {
-      throw new Error(`Failed to create post`)
+      return { success: false, message: 'There was a problem create your post.' }
     }
 
     return response.json()
