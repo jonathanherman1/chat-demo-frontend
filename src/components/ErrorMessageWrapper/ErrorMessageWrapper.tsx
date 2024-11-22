@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
+import type { ReactProps } from "@/types"
 
-export const ErrorMessageWrapper = ({ children }: { children: ReactNode }) => (
+export const ErrorMessageWrapper = ({ children }: ReactProps) => (
   <p className="ml-2 text-left">{children}</p>
 )
