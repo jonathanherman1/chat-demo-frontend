@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, Textarea } from '@nextui-org/react'
+import { useState } from 'react'
 import { Controller, type FieldErrors, useForm } from 'react-hook-form'
 import { createPost } from '../../api/postsApi'
 import { ErrorMessageWrapper } from '../ErrorMessageWrapper'
@@ -10,6 +11,7 @@ const defaultPost: Post = {
   username: '',
 }
 export const AddPostForm = () => {
+  const [serverError, setServerError] = useState<string | null>(null)
   const { control, handleSubmit, reset, formState } = useForm<Post>({
     defaultValues: defaultPost,
     mode: 'all',
@@ -18,8 +20,11 @@ export const AddPostForm = () => {
 
   const onSubmit = async (data: Post) => {
     const res = await createPost(data)
-    console.log(res)
-    reset(defaultPost)
+    if (res.success) {
+      reset(defaultPost)
+    } else {
+      setServerError(res.message)
+    }
   }
 
   const onError = (errors: FieldErrors) => {
@@ -69,6 +74,10 @@ export const AddPostForm = () => {
       <Button color="primary" type="submit" fullWidth isDisabled={!formState.isValid}>
         Add Post
       </Button>
+
+      {serverError && <p className='mt-6 rounded-lg bg-red-50 p-6 text-red-500'>
+        {serverError}
+      </p>}
     </form>
   )
 }
