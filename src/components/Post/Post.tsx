@@ -6,7 +6,7 @@ export type PostsProps = {
 }
 
 export const Post = ({ post }: PostsProps) => (
-  <div className="mb-4">
+  <div className="mb-4" data-testid='post'>
     <p>
       <span className="font-bold">{post.username}</span>
       <DateDisplay date={post.createdAt} className="ms-2 text-tiny" />
