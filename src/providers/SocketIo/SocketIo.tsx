@@ -3,7 +3,7 @@ import { io, Socket } from 'socket.io-client'
 import type { ReactProps } from '@/types'
 import { SocketIoContext } from './SocketIoContext'
 
-const url = import.meta.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'
+const url = import.meta.env.VITE_API_URL
 
 export const SocketIoProvider = ({ children }: ReactProps) => {
   const [socket, setSocket] = useState<Socket | null>(null)
