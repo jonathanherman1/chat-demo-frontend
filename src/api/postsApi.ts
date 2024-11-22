@@ -11,7 +11,6 @@ type ApiResponseError = {
   message: string
 }
 
-
 export type ApiResponse = ApiResponseSuccess | ApiResponseError
 
 export const getPosts = async (): Promise<ApiResponse> => {
