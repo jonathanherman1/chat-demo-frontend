@@ -1,18 +1,10 @@
-import { useEffect, useState } from 'react'
-import { getPosts } from './api/postsApi'
+
 import './App.css'
 import { AddPostForm, EmptyState, Posts } from './components'
-import type { Post } from './schemas'
+import { usePosts } from './hooks'
 
 function App() {
-  const [posts, setPosts] = useState<Post[]>([])
-  useEffect(() => {
-    getPosts().then((res) => {
-      if (res.success) {
-        setPosts(res.data)
-      }
-    })
-  }, [])
+  const { posts } = usePosts()
 
   return (
     <div className='flex min-h-dvh w-full flex-col items-center'>
