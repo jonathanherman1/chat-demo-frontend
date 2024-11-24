@@ -65,12 +65,12 @@ Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _ta
 3. Create `.env.production` and `.env.development` files with the following variables (value does not include anything after "="):
 
     `.env.production`
-    ```
+    ```sh
     VITE_API_URL=<VERSIONED_API_URL_HERE>
     ```
 
     `.env.development`
-    ```
+    ```sh
     VITE_API_URL=http://localhost:3000
     ```
 
@@ -96,7 +96,7 @@ To preview the production build on a device on your local network:
 
 1. Add a `.env.device` file in the root of the repo
 
-    ```
+    ```sh
     VITE_API_URL=http://<YOUR_IP_ADDRESS>:3000
     ```
 
