@@ -12,6 +12,7 @@ Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _ta
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Deployment](#deployment)
   - [Testing](#testing)
   - [License](#license)
   - [Changelog](#changelog)
@@ -91,6 +92,19 @@ To preview the production build, run:
 npm run preview
 ```
 
+## Deployment
+
+**<a href="https://chat-demo-frontend.vercel.app/" _target="blank" rel="noopener noreferrer">View a running version here!</a>**
+
+(Frontend deployed on <a href="vercel.com" _target="blank" rel="noopener noreferrer">Vercel</a>, Backend deployed on <a href="railway.app" _target="blank" rel="noopener noreferrer">Railway</a>)
+
+You can choose to deploy with the service of your choice.
+
+The main thing is to make sure that you set an environment variable `VITE_API_URL` to the newly hosted backend base route (no trailing slashes!).
+
+Note: It may make sense to deploy the backend first, but you can do this in either order. You will just need to set temporary environment variable(s) in one or the other until that service is deployed.
+
+
 ## Testing
 To run unit and integration tests with Vitest, run:
 
@@ -145,3 +159,5 @@ What features would you like to see?
 Notes:
 
 As this app expands, we can add in routing with React Router Dom, better API handling with TanStack Query, global state management with Zustand, pre-commit hooks with Husky etc.
+
+Paying for MongoDB would allow listening to Change Streams which would allow the app to dynamically update the list if there were database-driven changes.
