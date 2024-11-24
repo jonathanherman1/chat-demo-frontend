@@ -11,6 +11,7 @@ Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _ta
   - [Screenshots](#screenshots)
   - [Features](#features)
   - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
   - [Usage](#usage)
   - [Deployment](#deployment)
   - [Testing](#testing)
@@ -75,6 +76,31 @@ Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _ta
     VITE_API_URL=http://localhost:3000
     VITE_API_BASE_PATH=/api/v1
     ```
+
+
+## Environment Variables
+
+Create .env files in the root directory and configure the following variables as shown in the `.env.example`.
+
+You'll need `.env.development`, `.env.device`, `.env.production`.
+
+`.env.development`
+```sh
+VITE_API_URL=http://localhost:3000
+VITE_API_BASE_PATH=/api/v1
+```
+
+`.env.device`
+```sh
+VITE_API_URL=<YOUR_IP_ADDRESS>:3000
+VITE_API_BASE_PATH=/api/v1
+```
+
+`.env.production`
+```sh
+VITE_API_URL=<VERSIONED_API_URL_HERE>
+VITE_API_BASE_PATH=/api/v1
+```
 
 
 ## Usage
