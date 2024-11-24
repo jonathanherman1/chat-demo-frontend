@@ -82,7 +82,7 @@ To start the development server, run:
 npm run dev
 ```
 
-To build the project for production, run:
+To build the project for production (outputs built files to `/dist`), run:
 ```sh
 npm run build
 ```
@@ -91,6 +91,23 @@ To preview the production build, run:
 ```sh
 npm run preview
 ```
+
+To preview the production build on a device on your local network:
+
+1. Add a `.env.device` file in the root of the repo
+
+    ```
+    VITE_API_URL=http://<YOUR_IP_ADDRESS>:3000
+    ```
+
+2. Build the app
+
+
+3. Run the command to launch a build that's visible to the local network
+
+    ```sh
+    npm run preview:device
+    ```
 
 ## Deployment
 
