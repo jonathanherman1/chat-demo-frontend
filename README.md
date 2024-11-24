@@ -96,7 +96,7 @@ npm run preview
 
 **<a href="https://chat-demo-frontend.vercel.app/" _target="blank" rel="noopener noreferrer">View a running version here!</a>**
 
-(Frontend deployed on <a href="vercel.com" _target="blank" rel="noopener noreferrer">Vercel</a>, Backend deployed on <a href="railway.app" _target="blank" rel="noopener noreferrer">Railway</a>)
+(Frontend deployed on <a href="https://vercel.com" _target="blank" rel="noopener noreferrer">Vercel</a>, Backend deployed on <a href="https://railway.app" _target="blank" rel="noopener noreferrer">Railway</a>)
 
 You can choose to deploy with the service of your choice.
 
