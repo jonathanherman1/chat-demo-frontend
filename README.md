@@ -41,7 +41,7 @@ Checkout the [backend API](https://github.com/jonathanherman1/chat-demo-backend)
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/chat-demo-frontend.git
+    git clone https://github.com/jonathanherman1/chat-demo-frontend.git
     cd chat-demo-frontend
     ```
 
