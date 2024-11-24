@@ -40,9 +40,20 @@ Checkout the [backend API](https://github.com/jonathanherman1/chat-demo-backend)
 ## Installation
 
 1. Clone the repository:
+
+    Check the big green button in GitHub!
+
+    You can use HTTPS:
+
     ```sh
     git clone https://github.com/jonathanherman1/chat-demo-frontend.git
     cd chat-demo-frontend
+    ```
+
+    or you can use the GitHub CLI
+
+    ```sh
+    gh repo clone jonathanherman1/chat-demo-frontend
     ```
 
 2. Install dependencies:
