@@ -140,3 +140,8 @@ This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file
 What features would you like to see?
 
 [Drop us a line.](mailto:jonathan.n.herman@gmail.com)
+
+
+Notes:
+
+As this app expands, we can add in routing with React Router Dom, better API handling with TanStack Query, global state management with Zustand, pre-commit hooks with Husky etc.
