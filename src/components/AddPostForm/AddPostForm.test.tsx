@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { AddPostForm } from './AddPostForm'
 
 // Mock the API call
-vi.mock('@/api/postsApi', () => ({
+vi.mock('@/api/posts', () => ({
   createPost: vi.fn(() => Promise.resolve({ success: true })),
 }))
 

@@ -3,7 +3,7 @@
 import { render, screen, act } from '@testing-library/react'
 import { usePosts } from './usePosts'
 
-vi.mock('@/api/postsApi', () => {
+vi.mock('@/api/posts', () => {
   return {
     getPosts: vi.fn(() =>
       Promise.resolve({

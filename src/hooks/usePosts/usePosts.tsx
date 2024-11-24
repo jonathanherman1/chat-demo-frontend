@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getPosts } from '@/api/postsApi'
+import { getPosts } from '@/api/posts'
 import type { Post } from '@/schemas'
 import { useSocketIo } from "../useSocketIo"
 
