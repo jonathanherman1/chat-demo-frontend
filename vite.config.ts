@@ -15,6 +15,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./test/setup.ts']
+    setupFiles: ['./test/setup.ts'],
+    exclude: ['**/node_modules/**', '**/dist/**', '**/cypress/**'],
   }
 })
