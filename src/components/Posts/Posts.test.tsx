@@ -26,4 +26,10 @@ describe('Posts', () => {
       expect(getByText(post.message)).toBeInTheDocument()
     })
   })
+
+  it('handles empty posts array', () => {
+    const { getByText } = render(<Posts posts={[]} />)
+
+    expect(getByText(/no posts/i)).toBeInTheDocument()
+  })
 })

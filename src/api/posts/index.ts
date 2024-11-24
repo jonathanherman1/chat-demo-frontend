@@ -1,6 +1,6 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL
 
-import type { Post } from '../schemas'
+import type { Post } from '../../schemas'
 
 type ApiResponseSuccess = {
   success: true
