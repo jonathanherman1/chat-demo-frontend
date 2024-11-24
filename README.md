@@ -67,11 +67,13 @@ Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _ta
     `.env.production`
     ```sh
     VITE_API_URL=<VERSIONED_API_URL_HERE>
+    VITE_API_BASE_PATH=/api/v1
     ```
 
     `.env.development`
     ```sh
     VITE_API_URL=http://localhost:3000
+    VITE_API_BASE_PATH=/api/v1
     ```
 
 
@@ -98,6 +100,7 @@ To preview the production build on a device on your local network:
 
     ```sh
     VITE_API_URL=http://<YOUR_IP_ADDRESS>:3000
+    VITE_API_BASE_PATH=/api/v1
     ```
 
 2. Build the app
