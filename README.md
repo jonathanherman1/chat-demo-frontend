@@ -2,7 +2,7 @@
 
 This is the frontend application for the Chat Demo project. It is built using React, TypeScript, and Tailwind CSS, and it communicates with a backend server via Socket.IO to provide real-time chat functionality.
 
-Checkout the [backend API](https://github.com/jonathanherman1/chat-demo-backend).
+Check out the <a href="https://github.com/jonathanherman1/chat-demo-backend" _target="blank" rel="noopener noreferrer">backend API</a>.
 
 ## Table of Contents
 
